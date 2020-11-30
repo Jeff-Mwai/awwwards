@@ -47,3 +47,8 @@ def new_project(request):
     else:
         form = projectForm()
     return render(request,'new_project.html',{'form':form})     
+
+def posted_projects(request):
+    posts = Projects.objects.all()
+    
+    return render(request, 'projects.html',{"posts":posts})

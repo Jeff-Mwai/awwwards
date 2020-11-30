@@ -9,6 +9,7 @@ urlpatterns=[
     path('register/',views.register, name='registration'),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('new_project/',views.new_project, name='new_project'),
+    path('projects/',views.posted_projects, name='posted_projects'),
 
 ]
 
