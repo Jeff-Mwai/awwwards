@@ -51,12 +51,13 @@ def new_project(request):
         form = projectForm()
     return render(request,'new_project.html',{'form':form})     
 
+@login_required(login_url='login')  
 def posted_projects(request,id):
     posts = Projects.objects.get(id = id)
     # print(posts.title)
     
     return render(request, 'projects.html',{"posts":posts})
-
+@login_required(login_url='login')  
 def search_project(request):
     if 'project' in request.GET and request.GET['project']:
         name = request.GET.get("project")
