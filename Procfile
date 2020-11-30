@@ -1,0 +1,1 @@
+web: gunicorn awwardspjt.wsgi --log-file -
