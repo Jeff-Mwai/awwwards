@@ -25,3 +25,9 @@ class projectForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = ['title','description','screenshot','url']
+
+class ReviewForm(forms.ModelForm):
+
+    class Meta:
+        model = Rate
+        fields = ['design','usability','content']
