@@ -19,7 +19,7 @@ class RegistrationForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = [ 'profile_picture', 'bio']
+        fields = [ 'profile_picture', 'bio', 'contact_information']
 
 class projectForm(forms.ModelForm):
     class Meta:
