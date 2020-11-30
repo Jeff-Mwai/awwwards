@@ -42,28 +42,3 @@ class Projects(models.Model):
     def search_projects(cls, name):
         return cls.objects.filter(title__icontains=name).all()
 
-RATE_CHOICES = [
-(1,'1- Poor'),
-(2,'2- Poor'),
-(3,'3- Fair'),
-(4,'4- Fair'),
-(5,'5- Good'),
-(6,'6- Good'),
-(7,'7- Very Good'),
-(8,'8- Very Good'),
-(9,'9- Excellent'),
-(10,'10- Excellent'),
-]
-
-class Rate(models.Model):
-    user = models.ForeignKey(User,on_delete = models.CASCADE)
-    projects = models.ForeignKey(Projects,on_delete = models.CASCADE)
-    date = models.DateField(auto_now_add=True)
-    design = models.PositiveSmallIntegerField(choices = RATE_CHOICES,default= 0)
-    usability = models.PositiveSmallIntegerField(choices = RATE_CHOICES,default = 0)
-    content = models.PositiveSmallIntegerField(choices = RATE_CHOICES,default = 0)
-    
-
-
-    def __str__(self):
-        return self.user.username

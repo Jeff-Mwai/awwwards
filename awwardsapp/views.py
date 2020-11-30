@@ -52,3 +52,17 @@ def posted_projects(request):
     posts = Projects.objects.all()
     
     return render(request, 'projects.html',{"posts":posts})
+
+def search_project(request):
+    if 'project' in request.GET and request.GET['project']:
+        name = request.GET.get("project")
+        searchResults = Projects.search_projects(name)
+        message = f'name'
+        params = {
+            'results': searchResults,
+            'message': message
+        }
+        return render(request, 'search.html', params)
+    else:
+        message = "You haven't searched for any profile"
+    return render(request, 'search.html', {'message': message})
