@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile, Projects, Rate
+from .models import Profile, Projects
 
 
 class RegistrationForm(UserCreationForm):
@@ -26,8 +26,3 @@ class projectForm(forms.ModelForm):
         model = Projects
         fields = ['title','description','screenshot','url']
 
-class ReviewForm(forms.ModelForm):
-
-    class Meta:
-        model = Rate
-        fields = ['design','usability','content']

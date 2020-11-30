@@ -2,29 +2,37 @@
 {% load static%}
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
 
   {% if title %}
   <title>Awwwards - {{title}}</title>
   {% else %}
-    <title> Awwwards </title>
+  <title> Awwwards </title>
   {% endif %}
 
   {% block styles %}
-    {% bootstrap_css %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+
 
   {% endblock %}
 
 </head>
+
 <body>
-    {% include "navbar.html" %}
+  {% include "navbar.html" %}
 
-    {% block content %}  {%endblock%}
+  {% block content %} {%endblock%}
 
-    {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     {% bootstrap_javascript %}
-    {% endblock %}
+  {% block scripts %}
+
+
+  {% bootstrap_javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+  {% endblock %}
 </body>
+
 </html>

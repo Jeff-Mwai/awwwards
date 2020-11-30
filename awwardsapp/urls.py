@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -11,8 +11,7 @@ urlpatterns=[
     path('new_project/',views.new_project, name='new_project'),
     path('projects/',views.posted_projects, name='posted_projects'),
     path('search_project/',views.search_project, name='search_project'),
-    path('ratings/',views.ratings, name='ratings'),
-
+    path('ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]
 
 if settings.DEBUG:

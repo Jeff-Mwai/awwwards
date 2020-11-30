@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse
-from .forms import RegistrationForm, UserCreationForm, ProfileForm, projectForm, ReviewForm
-from .models import Profile, Projects, Rate
+from .forms import RegistrationForm, UserCreationForm, ProfileForm, projectForm
+from .models import Profile, Projects
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -67,19 +67,3 @@ def search_project(request):
         message = "You haven't searched for any project"
     return render(request, 'search.html', {'message': message})
 
-@login_required(login_url='login')   
-def ratings(request,id):
-    ratings = Rate.objects.get(projects_id = id).all()
-    project = Projects.objects.get(id = id)
-    user = request.user
-    if request.method == 'POST':
-        form = ReviewForm(request.POST)
-        if form.is_valid():
-            rate = form.save(commit=False)
-            rate.user = user
-            rate.projects = project
-            rate.save()
-            return redirect('home')
-    else:
-        form = ReviewForm()
-    return render(request,"projects.html",{"form":form,"project":project, "ratings": ratings})  
