@@ -56,7 +56,7 @@ RATE_CHOICES = [
 ]
 
 class Rate(models.Model):
-    user = models.ForeignKey(User,on_delete = models.CASCADE)
+    author = models.ForeignKey(User,on_delete = models.CASCADE)
     projects = models.ForeignKey(Projects,on_delete = models.CASCADE)
     date = models.DateField(auto_now_add=True)
     design = models.PositiveSmallIntegerField(choices = RATE_CHOICES,default= 0)

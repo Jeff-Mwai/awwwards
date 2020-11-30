@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse
-from .forms import RegistrationForm, UserCreationForm, ProfileForm, projectForm
+from .forms import RegistrationForm, UserCreationForm, ProfileForm, projectForm, ReviewForm
 from .models import Profile, Projects, Rate
 from django.contrib.auth.decorators import login_required
 
@@ -82,4 +82,4 @@ def ratings(request,id):
             return redirect('home')
     else:
         form = ReviewForm()
-    return render(request,"reviews.html",{"form":form,"project":project, "ratings": ratings})  
+    return render(request,"projects.html",{"form":form,"project":project, "ratings": ratings})  

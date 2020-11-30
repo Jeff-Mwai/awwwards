@@ -11,6 +11,7 @@ urlpatterns=[
     path('new_project/',views.new_project, name='new_project'),
     path('projects/',views.posted_projects, name='posted_projects'),
     path('search_project/',views.search_project, name='search_project'),
+    path('ratings/',views.ratings, name='ratings'),
 
 ]
 
