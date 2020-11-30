@@ -5,21 +5,34 @@
 
 {%block content %}
 <div class="container mt-5">
-    {%for post in posts%}
-    <h1 class="text-center">{{post.title}}</h1>
-    <p>{{post.description}}</p>
+    <h1 class="text-center">{{posts.title}}</h1>
+    <p>{{posts.description}}</p>
     <div class="card" style="width: 70rem;">
-        <img src="{{post.screenshot.url}}" class="card-img-top" alt="...">
+        <img src="{{posts.screenshot.url}}" class="card-img-top" alt="...">
         <h5 class="card-title"></h5>
     </div>
     <hr>
-    {% endfor %}
-
-
     <h1 class="text-center">Ratings</h1>
 
-    {% ratings object %}
-
+  
 </div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<h3>Design</h3>
+{% ratings posts %}
+</div>
+<div class="col-md-4">
+<h3>Usability</h3>
+{% ratings posts %}
+</div>
+<div class="col-md-4">
+<h3>Content</h3>
+{% ratings posts %}
+</div>
+</div>
+</div>
+  
 
 {% endblock %}

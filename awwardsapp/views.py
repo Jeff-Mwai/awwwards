@@ -48,8 +48,9 @@ def new_project(request):
         form = projectForm()
     return render(request,'new_project.html',{'form':form})     
 
-def posted_projects(request):
-    posts = Projects.objects.all()
+def posted_projects(request,id):
+    posts = Projects.objects.get(id = id)
+    # print(posts.title)
     
     return render(request, 'projects.html',{"posts":posts})
 

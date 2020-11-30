@@ -9,9 +9,9 @@ urlpatterns=[
     path('register/',views.register, name='registration'),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('new_project/',views.new_project, name='new_project'),
-    path('projects/',views.posted_projects, name='posted_projects'),
+    path('projects/<id>/',views.posted_projects, name='posted_projects'),
     path('search_project/',views.search_project, name='search_project'),
-    path('ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
 
 if settings.DEBUG:
