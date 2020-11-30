@@ -1,6 +1,6 @@
 # Awwwards
 
->[Owiti-Charles](https://github.com/Jeff-Mwai)  
+>[Jeff-Mwai](https://github.com/Jeff-Mwai)  
   
 # Description  
 Awwwards is a project made to enable users to register and post their projects. The users can also rate other existing projects on the website based on design, usability and content.
