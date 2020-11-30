@@ -12,6 +12,7 @@ urlpatterns=[
     path('projects/<id>/',views.posted_projects, name='posted_projects'),
     path('search_project/',views.search_project, name='search_project'),
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
+    path('profile/',views.profile, name='profile'),
 ]
 
 if settings.DEBUG:

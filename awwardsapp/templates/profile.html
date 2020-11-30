@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {%block content%}
-<div class="col-md-6 m-auto card">
+<div class="col-md-6 m-auto card mt-5">
     <div class=" content-section container" style="padding-top: 100px;">
     <div class="media">
         <div class="col-md-4">
             <div style="width: 150px; height:150px; overflow:hidden; border-radius:50%" class="img-wrapper">
-                <img width="120%" height="120%" src="{{user.profile.profile_picture.url }}" alt="profile">
+                <img width="100%" src="{{user.profile.profile_picture.url }}" alt="profile">
             </div>
         </div>
         <div class="media-body" style="margin-left: 80px;">
@@ -16,5 +16,5 @@
             <button type="button" class="btn btn-secondary">Update Profile</button>
         </div>
     </div>
-    <hr>
-    {%endblock content%}
+
+    {%endblock%}

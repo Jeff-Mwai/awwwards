@@ -9,6 +9,9 @@ def index(request):
     posts = Projects.objects.all()
     
     return render(request, 'index.html',{"posts":posts})
+@login_required(login_url='login')  
+def profile(request):
+    return render(request, 'profile.html')
 
 
 def register(request):
