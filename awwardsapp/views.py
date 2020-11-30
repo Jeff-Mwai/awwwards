@@ -64,5 +64,5 @@ def search_project(request):
         }
         return render(request, 'search.html', params)
     else:
-        message = "You haven't searched for any profile"
+        message = "You haven't searched for any project"
     return render(request, 'search.html', {'message': message})
