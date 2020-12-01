@@ -55,6 +55,10 @@ python manage.py makemigrations
  python manage.py test 
 ```
 Open the application on your browser `127.0.0.1:8000`.  
+
+## Api Endpoints
+* https://yo-awwards.herokuapp.com/api/projects
+* https://yo-awwards.herokuapp.com/api/profile
  
 ## Technology used  
   
