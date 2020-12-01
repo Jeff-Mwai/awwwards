@@ -7,8 +7,9 @@ from django.utils import timezone
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,)
     profile_picture = CloudinaryField('image')
-    bio = models.TextField(max_length=500, default="My Bio", blank=True)
-    contact_information = models.TextField(default="+254")
+    bio = models.CharField(max_length=300, default="My Bio", blank=True)
+    contact_information = models.CharField(max_length=300, default="+254")
+    
 
     def __str__(self):
         return self.user.username

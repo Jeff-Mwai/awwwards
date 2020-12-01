@@ -76,6 +76,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'awwardsapp',
     'star_ratings',
     'bootstrap4',
@@ -127,7 +128,7 @@ WSGI_APPLICATION = 'awwardspjt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'awwwards',
+        'NAME': 'awards',
         'USER': 'moringa',
         'PASSWORD':'KingJeffa00*',
     }
