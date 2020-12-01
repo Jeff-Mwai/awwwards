@@ -16,7 +16,7 @@ def index(request):
     return render(request, 'index.html',{"posts":posts})
 @login_required(login_url='login')  
 def profile(request):
-    
+
     return render(request, 'profile.html')
 
 
@@ -42,6 +42,7 @@ def register(request):
         'profForm': prof
     }
     return render(request, 'registration/registration.html', params)   
+
 
 @login_required(login_url='login')   
 def new_project(request):

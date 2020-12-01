@@ -15,7 +15,7 @@ class Profile(models.Model):
         return self.user.username
 
     def save_profile(self):
-        self.save()
+        self.user
 
     @classmethod
     def search_by_name(cls, search_term):
