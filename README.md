@@ -5,7 +5,7 @@
 # Description  
 Awwwards is a project made to enable users to register and post their projects. The users can also rate other existing projects on the website based on design, usability and content.
 ##  Live Link  
- Click [View Site]()  to visit the site
+ Click [View Site](https://yo-awwards.herokuapp.com/)  to visit the site
  
 ## User Story  
   
